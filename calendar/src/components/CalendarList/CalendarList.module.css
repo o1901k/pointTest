@@ -1,0 +1,154 @@
+.calendarList {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.competitionTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+.tableHeader th {
+  text-align: center;
+  padding: 10px;
+  color: var(--text-primary);
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.tableHeader th:nth-child(2) {
+  text-align: left;
+}
+
+.dateGroupCell {
+  padding: 20px 12px 12px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.dateText {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--text-white);
+}
+
+.competitionRow:hover {
+  background-color: rgba(149, 227, 250, 0.05);
+}
+
+.regionCell,
+.titleCell,
+.genderCell,
+.weaponCell,
+.categoryCell,
+.typeCell {
+  padding: 14px 12px;
+  color: rgba(255, 255, 255, 0.9);
+  border-bottom: 1px solid var(--border-color);
+  vertical-align: top;
+  text-align: center;
+}
+
+.titleCell {
+  text-align: left;
+}
+
+@media (min-width: 1440px) {
+  .regionCell {
+    width: 8%;
+  }
+  .titleCell {
+    width: 45%;
+  }
+  .genderCell {
+    width: 6%;
+  }
+  .weaponCell {
+    width: 10%;
+  }
+  .categoryCell {
+    width: 15%;
+  }
+  .typeCell {
+    width: 16%;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .regionCell {
+    width: 9%;
+  }
+  .titleCell {
+    width: 38%;
+  }
+  .genderCell {
+    width: 8%;
+  }
+  .weaponCell {
+    width: 12%;
+  }
+  .categoryCell {
+    width: 18%;
+  }
+  .typeCell {
+    width: 15%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .regionCell {
+    width: 11%;
+  }
+  .titleCell {
+    width: 32%;
+  }
+  .genderCell {
+    width: 10%;
+  }
+  .weaponCell {
+    width: 13%;
+  }
+  .categoryCell {
+    width: 20%;
+  }
+  .typeCell {
+    width: 14%;
+  }
+}
+
+@media (max-width: 767px) {
+  .regionCell,
+  .titleCell,
+  .genderCell,
+  .weaponCell,
+  .categoryCell,
+  .typeCell {
+    width: auto;
+    white-space: nowrap;
+  }
+
+  .titleCell {
+    min-width: 200px;
+  }
+  .categoryCell {
+    min-width: 150px;
+  }
+}
+
+.emptyState {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: var(--bg-input);
+  border-radius: 12px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.emptyState p {
+  margin: 8px 0;
+}
+
+.emptyHint {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
