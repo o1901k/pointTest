@@ -7,7 +7,7 @@ export interface UseInfiniteScrollPaginatedProps {
 }
 
 export const mapFiltersToApi = (f: FilterState): EventFilters => ({
-  gender: f.gender && f.gender !== 'Любой' ? (f.gender === 'М' ? 'M' : 'F') : undefined,
+  gender: f.gender && f.gender !== 'Любой' ? f.gender : undefined,
   weapon: f.weapon !== 'Любое' ? f.weapon : undefined,
   age: f.age !== 'Любой' ? f.age : undefined,
   serie: (f.serie?.length && !f.serie.includes('Все')) ? f.serie : undefined,
