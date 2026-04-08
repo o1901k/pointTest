@@ -1,0 +1,294 @@
+.filters {
+  margin-bottom: 24px;
+}
+
+.filterRow {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filterGroup {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  flex: 0 0 auto;
+}
+
+.selectWrapper,
+.inputWrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  z-index: 1;
+}
+
+.filterGroup select {
+  color: var(--text-white);
+  padding: 23px 12px 8px 12px;
+  height: 46px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--bg-input);
+  cursor: pointer;
+  appearance: none;
+  background-image: url("../../assets/arrow_drop_down.png");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 24px;
+}
+
+.filterGroup:first-child select {
+  width: 217px;
+}
+.filterGroup:not(:first-child) select {
+  width: 160px;
+}
+
+.floatingLabel {
+  position: absolute;
+  left: 12px;
+  top: 28%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: var(--text-primary);
+  transition: var(--transition-default);
+  pointer-events: none;
+}
+
+.filterGroup select:focus + .floatingLabel,
+.filterGroup select:not([value=""]) + .floatingLabel {
+  top: 28%;
+  font-size: 11px;
+}
+
+.filterGroup input {
+  height: 46px;
+  font-size: 14px;
+  width: 160px;
+}
+
+.customInput {
+  width: 100%;
+  padding: 16px 12px 8px 12px;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--bg-input);
+  outline: none;
+  transition: var(--transition-default);
+  box-sizing: border-box;
+  position: relative;
+  z-index: 2;
+}
+
+.customInput::placeholder {
+  color: var(--text-secondary);
+}
+
+.customInput[type="text"] {
+  cursor: text;
+  color: var(--text-white);
+}
+
+.customInput[type="text"]:hover,
+.customInput[type="date"]:hover {
+  background-color: var(--bg-input-hover);
+}
+
+.customInput[type="text"]:focus,
+.customInput[type="date"]:focus {
+  box-shadow: 0 0 0 2px rgba(149, 227, 250, 0.2);
+  background-color: var(--bg-input-hover);
+}
+
+.customInput[type="date"] {
+  color: var(--text-white);
+  padding-right: 40px;
+  cursor: pointer;
+}
+
+.customInput[type="date"]:required:invalid {
+  color: transparent;
+}
+
+.customInput[type="date"]:required:invalid::-webkit-datetime-edit,
+.customInput[type="date"]:required:invalid::-webkit-datetime-edit-year-field,
+.customInput[type="date"]:required:invalid::-webkit-datetime-edit-month-field,
+.customInput[type="date"]:required:invalid::-webkit-datetime-edit-day-field,
+.customInput[type="date"]:required:invalid::-webkit-datetime-edit-text {
+  color: transparent;
+}
+
+.customInput[type="date"]:valid {
+  color: var(--text-white);
+}
+
+.customInput[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  cursor: pointer;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: transparent;
+  z-index: 3;
+}
+
+.floatingLabelInput {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: var(--text-secondary);
+  transition: var(--transition-default);
+  pointer-events: none;
+  background-color: transparent;
+  line-height: 1;
+  z-index: 2;
+}
+
+.customInput[type="date"]:required:invalid ~ .floatingLabelInput {
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+}
+
+.customInput[type="date"]:focus ~ .floatingLabelInput,
+.customInput[type="date"]:valid ~ .floatingLabelInput {
+  top: 0;
+  transform: translateY(-50%);
+  font-size: 11px;
+  color: var(--text-primary);
+  background-color: var(--bg-input);
+  padding: 0 4px;
+}
+
+.filterRowSearch {
+  display: flex;
+  gap: 16px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.searchInput {
+  padding: 10px 12px 8px 12px;
+  width: 1024px;
+  height: 46px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--bg-input);
+  cursor: pointer;
+  outline: none;
+  transition: var(--transition-default);
+  color: var(--text-white);
+}
+
+.searchInput::placeholder {
+  color: var(--text-secondary);
+}
+
+.searchInput:hover {
+  background-color: var(--bg-input-hover);
+}
+
+.searchInput:focus {
+  box-shadow: 0 0 0 2px rgba(149, 227, 250, 0.2);
+  background-color: var(--bg-input-hover);
+}
+
+.resetButton {
+  padding: 8px 20px;
+  height: 46px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: var(--text-primary);
+  transition: var(--transition-default);
+  display: flex;
+  align-items: center;
+}
+
+.resetButton:hover {
+  color: rgba(149, 227, 250, 0.7);
+  transform: scale(1.02);
+}
+
+@media (min-width: 1440px) {
+  .filterRow {
+    gap: clamp(10px, 2vw, 40px);
+    justify-content: space-between;
+  }
+
+  .filterGroup {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .filterGroup .selectWrapper select,
+  .filterGroup select,
+  .filterGroup .inputWrapper input,
+  .filterGroup input {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .filterRowSearch {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: clamp(16px, 2vw, 40px);
+  }
+
+  .searchInput {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .filterRow {
+    gap: 12px;
+  }
+
+  .filterGroup select,
+  .filterGroup input {
+    min-width: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .filterRow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filterGroup {
+    width: 100%;
+  }
+
+  .filterGroup select,
+  .filterGroup input {
+    width: 100%;
+  }
+
+  .filterRowSearch {
+    flex-direction: column;
+  }
+
+  .searchInput {
+    width: 100%;
+  }
+
+  .resetButton {
+    align-self: stretch;
+    justify-content: center;
+  }
+}
